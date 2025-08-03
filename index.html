@@ -6,15 +6,28 @@
     <title>Art Galaxy Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
+    :root {
+      --role-bg-light: #eef2f5;
+      --role-text-light: #444;
+
+      --role-bg-dark: #2a2a2a;
+      --role-text-dark: #eee;
+    }
     .role {
       font-size: 0.95rem;
-      color: #666;
       font-style: italic;
-      background-color: #eef2f5;
+      display: inline-block;
       padding: 0.3rem 0.6rem;
       border-radius: 6px;
-      display: inline-block;
-      }
+      background-color: var(--role-bg-light);
+      color: var(--role-text-light);
+      box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    }
+    .dark-mode .role {
+      background-color: var(--role-bg-dark);
+      color: var(--role-text-dark);
+      box-shadow: 0 0 2px rgba(255,255,255,0.1);
+    }
     .center{
       display: flex;
       justify-content: center;
@@ -34,6 +47,9 @@
         background: inherit;
         width: 100%;
         margin-top: 10px;
+        transition: max-height 0.4s ease;
+        overflow: hidden;
+        max-height: 0;
       }
 
       nav ul.show {
@@ -93,9 +109,12 @@
       position: sticky;
       top: 0;
       z-index: 999;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.85);
     }
     .dark-mode nav {
-      background-color: #1f1f1f;
+      backdrop-filter: blur(10px);
+      background-color: rgba(31, 31, 31, 0.85);
     }
     .logo {
       font-size: 26px;
@@ -243,7 +262,16 @@
     .product {
       animation: fadeInUp 0.6s ease both;
     }
+    .reveal {
+      opacity: 0;
+      transform: translateY(80px) scale(0.95);
+      transition: all 0.6s ease-out;
+    }
 
+    .revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -280,28 +308,28 @@
     </section>
     <section id="team">
      <h2 class="section-title">Our Team</h2>
-     <div class="team-grid">
-      <div class="team-card">
+     <div class="team-grid reveal">
+      <div class="team-card reveal">
        <p>Akshaj Tyagi</p>
        <p class="role">Decoration</p>
       </div>
-      <div class="team-card">
+      <div class="team-card reveal">
        <p>Aurva Patil</p>
-       <p class="role">Product Designer</p>
+       <p class="role">Resin Designer</p>
      </div>
-     <div class="team-card">
+     <div class="team-card reveal">
        <p>Sagnik Ghosh</p>
-       <p class="role">Product Designer</p>
+       <p class="role">Terracotta Sculptor</p>
      </div>
-     <div class="team-card">
+     <div class="team-card reveal">
        <p>Shlok Kartik</p>
-       <p class="role">Product Designer</p>
+       <p class="role">Terracotta Sculptor</p>
      </div>
-     <div class="team-card">
+     <div class="team-card reveal">
        <p>Aayushman Chadha</p>
-       <p class="role">Product Designer</p>
+       <p class="role">Rangoli Artist</p>
      </div>
-     <div class="team-card">
+     <div class="team-card reveal">
        <p>Paarth Upadhya</p>
        <p class="role">Website and Presentation</p>
      </div>
@@ -310,49 +338,49 @@
     
     <section id="shop">
       <h2 class="section-title">Our Artworks</h2>
-      <div class="shop-grid">
-        <div class="product">
+      <div class="shop-grid reveal">
+        <div class="product reveal">
           <h3>Terracotta Art</h3>
-          <p>Stock: 3</p>
+          <p>Stock: 5</p>
           <p>Price: ₹180</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Rangoli-Big</h3>
           <p>Stock : 2</p>
           <p>Price : ₹100</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Rangoli-Small</h3>
           <p>Stock : 10</p>
           <p>Price  : ₹50</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Rangoli-Combo Set</h3>
           <p>Stock: 2</p>
           <p style="color: red;">BESTSELLER</p>
           <p>Price: ₹140</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Resin Art-Circle</h3>
           <p>Stock : 3</p>
           <p>Price : ₹140</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Resin Art-Square</h3>
           <p>Stock : 3</p>
           <p>Price : ₹150</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Resin Art-Sphere</h3>
           <p>Stock : 3</p>
           <p>Price : ₹180</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Resin Art-Cube</h3>
           <p>Stock : 3</p>
           <p>Price : ₹180</p>
         </div>
-        <div class="product">
+        <div class="product reveal">
           <h3>Resin Art-Pyramid</h3>
           <p>Stock : 3</p>
           <p>Price : ₹180</p>
@@ -362,7 +390,7 @@
 
     <section id="contact">
       <h2 class="section-title">Contact Us To Order</h2>
-      <div class="contact">
+      <div class="contact reveal">
         📞 Call to Order: <a href="tel:9892856691"> 98928 56691</a>
       </div>
     </section>
@@ -372,12 +400,34 @@
     </footer>
 
     <script>
-      function toggleDark() {
-        document.body.classList.toggle('dark-mode');
+      const reveals = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          } else {
+            entry.target.classList.remove("revealed");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(el => observer.observe(el));
+      
+       function toggleDark() {
+        const body = document.body;
+        const btn = document.querySelector('.toggle-dark');
+        body.classList.toggle('dark-mode');
+        btn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
       }
 
       function toggleMenu() {
         document.querySelector('nav ul').classList.toggle('show');
+        document.querySelectorAll('nav ul li a').forEach(link => {
+          link.addEventListener('click', () => {
+            document.querySelector('nav ul').classList.remove('show');
+          });
+        });
       }
     </script>
   </body>
