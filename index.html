@@ -463,23 +463,25 @@
           });
         });
       }
-
+      
   // ✅ COMBINED Typing Logic
       document.addEventListener("DOMContentLoaded", () => {
     // About Us typing paragraph
         const text = "We are a passionate team creating traditional and modern art forms like Terracotta, Resin, and Rangoli. Every piece is handmade and tells a story of love and beauty.";
         const target = document.getElementById("typing-text");
 
-        let i = 0;
-        function type() {
-          if (i < text.length) {
-            target.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 50);
-          }
-        }
-        type();
-
+        if (target) {
+          let i = 0;
+          function type() {
+            if (i < text.length) {
+            target.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 50);
+            }
+          }
+        type();
+       }
+                                                
     // Headings with class .typing-heading
         const speed = 80;
         const typedHeadings = new Set();
