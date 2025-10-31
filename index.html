@@ -193,6 +193,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
+      justify-content: center; /* centers leftover items in last row */
+      justify-items: center;   /* centers items inside each cell */
+      align-items: start;      /* keeps vertical alignment clean */
     }
     .team-card {
       background: white;
@@ -208,6 +211,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
+      justify-content: center; /* key line — centers incomplete last row */
+      justify-items: center;   /* centers product cards themselves */
+      align-items: start;
     }
     .product {
       background: white;
