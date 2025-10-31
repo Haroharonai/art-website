@@ -193,9 +193,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
-      justify-content: center; /* centers leftover items in last row */
-      justify-items: center;   /* centers items inside each cell */
-      align-items: start;      /* keeps vertical alignment clean */
+      justify-content: center;
     }
     .team-card {
       background: white;
@@ -211,9 +209,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
-      justify-content: center; /* key line — centers incomplete last row */
-      justify-items: center;   /* centers product cards themselves */
-      align-items: start;
+      justify-content: center;
     }
     .product {
       background: white;
@@ -468,9 +464,13 @@
           </div>
           <div class="product reveal">
             <h3>Buy 6 Lotus Rangolis at the low price of ₹270 (₹30 off!)</h3>
+            <p text-align:center; style="color:red;">BEST DEAL</p>
           </div>
           <div class="product reveal">
             <h3>Buy 6 Big Diyas for ₹110 (₹10 off!)</h3>
+          </div>
+          <div class="product reveal">
+             <h3>Buy a Mandala/Square Rangoli and 2 Lotus Rangolis for the low price of ₹240 (₹10 off!)</h3>
           </div>
     </section>
       
